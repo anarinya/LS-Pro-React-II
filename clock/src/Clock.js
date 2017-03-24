@@ -23,8 +23,11 @@ export default class Clock extends Component {
   }
 
   setTime() {
-    /* async format unnecessary, replacing instead of modifying original value */
-    this.setState({ time: new Date() });
+    this.setState(currentState => {
+      return {
+        time: new Date()
+      };
+    });
   }
 
   componentDidMount() {
